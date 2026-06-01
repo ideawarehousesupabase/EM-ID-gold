@@ -1,0 +1,118 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap");
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-display: "Cormorant Garamond", serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-gold: var(--gold);
+  --color-gold-dim: var(--gold-dim);
+}
+
+:root {
+  --radius: 0.5rem;
+  /* Dark luxury gold palette */
+  --background: oklch(0.16 0.012 60);
+  --foreground: oklch(0.95 0.015 80);
+  --card: oklch(0.21 0.014 65);
+  --card-foreground: oklch(0.95 0.015 80);
+  --popover: oklch(0.21 0.014 65);
+  --popover-foreground: oklch(0.95 0.015 80);
+  --primary: oklch(0.79 0.14 85);
+  --primary-foreground: oklch(0.16 0.012 60);
+  --secondary: oklch(0.26 0.014 70);
+  --secondary-foreground: oklch(0.95 0.015 80);
+  --muted: oklch(0.24 0.012 70);
+  --muted-foreground: oklch(0.7 0.02 80);
+  --accent: oklch(0.3 0.04 80);
+  --accent-foreground: oklch(0.95 0.015 80);
+  --destructive: oklch(0.6 0.22 25);
+  --destructive-foreground: oklch(0.98 0 0);
+  --success: oklch(0.7 0.16 150);
+  --success-foreground: oklch(0.12 0.02 150);
+  --border: oklch(0.32 0.018 75 / 0.6);
+  --input: oklch(0.28 0.016 70);
+  --ring: oklch(0.79 0.14 85);
+  --gold: oklch(0.82 0.15 85);
+  --gold-dim: oklch(0.55 0.1 80);
+  --sidebar: oklch(0.18 0.012 65);
+  --sidebar-foreground: oklch(0.95 0.015 80);
+  --sidebar-primary: oklch(0.79 0.14 85);
+  --sidebar-primary-foreground: oklch(0.16 0.012 60);
+  --sidebar-accent: oklch(0.26 0.014 70);
+  --sidebar-accent-foreground: oklch(0.95 0.015 80);
+  --sidebar-border: oklch(0.32 0.018 75 / 0.6);
+  --sidebar-ring: oklch(0.79 0.14 85);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  html, body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+  }
+}
+
+@layer utilities {
+  .text-gold {
+    color: var(--gold);
+  }
+  .bg-gold {
+    background-color: var(--gold);
+  }
+  .gold-gradient {
+    background: linear-gradient(135deg, oklch(0.86 0.16 90) 0%, oklch(0.72 0.14 75) 50%, oklch(0.55 0.1 70) 100%);
+  }
+  .gold-text-gradient {
+    background: linear-gradient(135deg, oklch(0.92 0.12 92) 0%, oklch(0.78 0.15 85) 50%, oklch(0.6 0.12 75) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .luxury-border {
+    border: 1px solid color-mix(in oklab, var(--gold) 25%, transparent);
+  }
+  .luxury-glow {
+    box-shadow: 0 0 60px -20px color-mix(in oklab, var(--gold) 50%, transparent);
+  }
+  .grain {
+    background-image: radial-gradient(color-mix(in oklab, var(--gold) 8%, transparent) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+}
