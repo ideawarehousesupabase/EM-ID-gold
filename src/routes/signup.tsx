@@ -67,8 +67,6 @@ function SignUp() {
           <select value={form.role} onChange={(e) => setForm({ ...form, role: e.target.value as Role })} className={inputCls}>
             <option value="manufacturer">Manufacturer</option>
             <option value="vault_operator">Vault Operator</option>
-            <option value="bullion_dealer">Bullion Dealer</option>
-            <option value="auditor">Auditor</option>
           </select>
         </Field>
         {error && <div className="text-sm text-destructive">{error}</div>}
